@@ -1,14 +1,20 @@
+import heapq
+
 n = int(input())
-classroom = []
+classtime = []
+room = []
 for i in range(n) :
     s, t = map(int, input().split())
-    classroom.append([s, t])
+    classtime.append([s, t])
 
-classroom.sort(key = lambda x : x[0])
-count = 0
-for i in range(n-1) :
-    if classroom[i][1] <= classroom[i+1][0] :
-        continue
+classtime.sort(key = lambda x : x[0])
+heapq.heappush(room, classtime[0][1]) # 정렬 후 첫번째 강의 끝나는 시간
+
+for i in range(1, n) :
+    if classtime[i][0] < room[0] :
+        heapq.heappush(room, classtime[i][1])
     else :
-        count += 1
-print(count)
+        heapq.heappop(room)
+        heapq.heappush(room, classtime[i][1])
+
+print(len(room))
