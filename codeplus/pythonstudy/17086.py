@@ -10,10 +10,10 @@ q = deque()
 #for i in range(n) :
 #    check.append([0]*m)
 
-dx = [-1,-1,-1,0,1,0,1,1]
+dx = [-1,-1,-1,0,1,0,1,1]   # 8방향
 dy = [-1,0,1,1,1,-1,0,-1]
 
-
+# 큐에 미리 상어위치 좌표값을 넣어둬야함 --> 그다음에 bfs 돌리기 
 def bfs() :
     while q :
         x, y = q.popleft()
@@ -34,5 +34,5 @@ bfs()
 cnt = 0          
 for i in range(n) :
     for j in range(m) :
-        cnt = max(cnt, shark[i][j])
+        cnt = max(cnt, shark[i][j])  # 이중리스트에서는 바로 max 사용안됨 
 print(cnt-1)
