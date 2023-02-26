@@ -1,4 +1,4 @@
-# 17086 아기상어2
+# 17086 아기상어2  자주 나오는 유형!!
 from collections import deque
 n, m = map(int,input().split())
 shark = []
