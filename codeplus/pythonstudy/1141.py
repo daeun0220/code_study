@@ -12,7 +12,7 @@ count = 0
 for i in range(len(word)) :
     check = 0
     for j in range(i+1, len(word)) :
-        if word[i] in word[j] :
+        if word[i] == word[j][:len(word[i])] :   # word[i] in word[j] 안됨 / 문자열 비교는 슬라이싱! 
             check = 1
     
     if check == 0 :
