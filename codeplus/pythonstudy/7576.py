@@ -28,16 +28,15 @@ def bfs() :
                     q.append((nx,ny))
                 #elif box[nx][ny] == -1 :
                 #    visited[nx][ny] = 1
+bfs()
+for i in box :
+    for j in i :
+        if j == 0 :
+            print(-1)
+            exit(0)
+    ans = max(ans, max(i))
+print(ans - 1)
 
-def simulate() :
-    bfs()
-    for i in box :
-        for j in i :
-            if j == 0 :
-                return(-1)
-        ans = max(ans, max(i))
-    return(ans - 1)
 
-print(simulate())
 
 
