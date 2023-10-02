@@ -1,3 +1,4 @@
+# 11000 강의실 배정
 import heapq
 
 n = int(input())

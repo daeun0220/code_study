@@ -2,7 +2,7 @@
 from collections import deque
 
 def bfs() :
-    visited = [-1 for _ in range(n+1)]
+    visited = [-1 for _ in range(n+1)]   # 방문 못할 경우 -1 
     q = deque()
     q.append((1,0))
     visited[1] = 0
@@ -28,9 +28,9 @@ for _ in range(q) :
         graph[i].append(j)
         graph[j].append(i)
         ans = bfs()
-        print(ans)
+        print(*ans)    # print(*list) 할 경우 리스트 요소 한번에 [] 없이 출력
     elif a == 2 :
         graph[i].remove(j)
         graph[j].remove(i)
         ans = bfs()
-        print(ans)
+        print(*ans)
